@@ -775,7 +775,7 @@
         }
         ctx.restore();
         lbCanvas && lbCanvas.width && ctx.drawImage(lbCanvas, canvasWidth - lbCanvas.width - 10, 10); // draw Leader Board
-        if (chatCanvas != null) ctx.drawImage(chatCanvas, 0, canvasHeight - chatCanvas.height - 50); // draw Leader Board
+        if ((chatCanvas) && (chatCanvas.width)) ctx.drawImage(chatCanvas, 0, canvasHeight - chatCanvas.height - 50); // draw Leader Board
 
         userScore = Math.max(userScore, calcUserScore());
         if (0 != userScore) {

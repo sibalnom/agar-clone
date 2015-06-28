@@ -64,7 +64,7 @@ li{
 				$name = pathinfo($curimg)['filename'];
 				echo "<li><div class=\"circular\" style=' background-image: url(img.php?src=$dirname$curimg&w=150&h=150&zc=1)'><p class=\"imgDescription\">$name</p></div></li>\n ";
 			}
-		} 				
+		}
 	?>
 </ul>
 
