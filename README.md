@@ -16,7 +16,7 @@ Copy all files to a server with PHP support (e.g. LEMP/LAMP). To check whether y
 Once everything is set up, open index.html in your browser. If everything is working well, go to the next section to use your own Ogar server.
 
 ### Support your server
-Replace the CONNECTION_URL with your own ip and port in main_out.js
+Replace the main.php with your own ip and port
 
 ### Upload Custom Skins
 The upload module does two things. The first is to upload a skin onto skins folder. The second is that the client request the server to run checkdir.php every 15 seconds to check what skins are uploaded and add them into knownNameDict. Then the skins can be loaded. 
