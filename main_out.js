@@ -10,7 +10,8 @@
      * Enter path to the skin image folder
      * To take skins from the official server enter: "http://agar.io/skins/"
      */
-    var SKIN_URL = "./skins/";//skins folder
+    // var SKIN_URL = "./skins/";//skins folder
+    var SKIN_URL = "http://agar.io/skins/";//skins folder
 
 
     var touchX, touchY,
@@ -352,8 +353,9 @@
             error: function () {
                 setTimeout(attemptConnection, 1E3)
             },
-            success: function () {
-                wsConnect("ws://" + CONNECTION_URL)
+            success: function (data) {
+                //wsConnect("ws://" + CONNECTION_URL)
+                wsConnect("ws://" + data)
             },
             dataType: "text",
             method: "POST",
@@ -381,8 +383,6 @@
             }
             ws = null
         }
-        var c = CONNECTION_URL;
-        wsUrl = "ws://" + c;
         nodesOnScreen = [];
         playerCells = [];
         nodes = {};
@@ -1011,11 +1011,11 @@
                 ctx.globalAlpha = 1;
                 ctx.fillStyle = "#FFFFFF";
                 var c = "Leaderboard";
-                ctx.font = "30px Ubuntu";
+                ctx.font = "30px 'Apple SD Gothic Neo', 'NanumGothic', 'Malgun Gothic', Ubuntu";
                 ctx.fillText(c, 100 - ctx.measureText(c).width / 2, 40);
                 var b;
                 if (null == teamScores) {
-                    for (ctx.font = "20px Ubuntu", b = 0; b < leaderBoard.length; ++b) {
+                    for (ctx.font = "20px 'Apple SD Gothic Neo', 'NanumGothic', 'Malgun Gothic', Ubuntu", b = 0; b < leaderBoard.length; ++b) {
                         c = leaderBoard[b].name || "An unnamed cell";
                         if (!showName) {
                             (c = "An unnamed cell");
@@ -1577,7 +1577,7 @@
                     value = this._value,
                     scale = this._scale,
                     fontsize = this._size,
-                    font = fontsize + 'px Ubuntu';
+                    font = fontsize + "px 'Apple SD Gothic Neo', 'NanumGothic', 'Malgun Gothic', Ubuntu";
                 ctx.font = font;
                 var h = ~~(.2 * fontsize);
                 canvas.width = (ctx.measureText(value).width +
